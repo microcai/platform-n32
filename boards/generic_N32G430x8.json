@@ -1,0 +1,30 @@
+{
+    "build": {
+      "core": "N32G430",
+      "cpu": "cortex-m4",
+      "mcu": "n32g430",
+      "extra_flags": "-DN32G430",
+      "ldscript": "n32g430_flash.ld"
+    },
+    "debug": {
+      "jlink_device": "N32G430x8",
+      "svd_path": "N32G430.svd",
+      "pack": "Nations.N32G430_DFP.1.3.0.pack",
+      "pyocd_target": "n32g430c8l7"
+    },
+    "frameworks": [
+      "sdk"
+    ],
+    "name": "Generic N32G430x8",
+    "upload": {
+      "maximum_ram_size": 4096,
+      "maximum_size": 65536,
+      "protocol": "stlink",
+      "protocols": [
+        "jlink",
+        "daplink"
+      ]
+    },
+    "url": "https://www.nationstech.com/product/general/n32g/n32g43x/n32g430",
+    "vendor": "Generic"
+  }

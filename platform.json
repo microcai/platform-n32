@@ -1,0 +1,51 @@
+
+{
+  "name": "platform-N32",
+  "title": "N32",
+  "description": "",
+  "homepage": "https://www.nationstech.com/product/general/n32g/",
+  "license": "TBD",
+  "keywords": [
+    "dev-platform",
+    "ARM",
+    "Cortex-M4F"
+  ],
+  "engines": {
+    "platformio": "^6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microcai/platform-N32"
+  },
+  "version": "1.0.0",
+  "frameworks": {
+    "sdk": {
+      "package": "framework-N32sdk",
+      "script": "builder/frameworks/sdk.py"
+    }
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+        "type": "toolchain",
+        "owner": "platformio",
+        "version": ">=1.140201.0"
+    },
+    "framework-N32sdk": {
+      "type": "framework",
+      "optional": true,
+      "version": "https://github.com/microcai/framework-N32sdk"
+    },
+    "tool-pyocd": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~2.3600.0"
+    },
+    "tool-jlink": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "^1.63208.0"
+    }
+  }
+}
