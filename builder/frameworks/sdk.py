@@ -28,6 +28,9 @@ env.Append(
     ASPPFLAGS=['-x', 'assembler-with-cpp'],
 
     CCFLAGS=machine_flags + [
+        "-mcpu=cortex-m4",
+        "-mfpu=fpv4-sp-d16",
+        "-mfloat-abi=hard",
         "-Os",  # optimize for size
         "-ffunction-sections",  # place each function in its own section
         "-fdata-sections",

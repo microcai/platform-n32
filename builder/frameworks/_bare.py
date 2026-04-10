@@ -42,6 +42,8 @@ env.Append(
     ],
 
     CXXFLAGS=[
+        "-mfpu=fpv4-sp-d16",
+        "-mfloat-abi=hard",
         "-fno-rtti",
         "-fno-exceptions"
     ],
@@ -55,6 +57,7 @@ env.Append(
         "-Os",
         "-Wl,--gc-sections,--relax",
         "-mthumb",
+        "-mcpu=cortex-m4",
         "-mfpu=fpv4-sp-d16",
         "-mfloat-abi=hard",
         "-static",
