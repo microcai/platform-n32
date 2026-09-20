@@ -24,6 +24,10 @@ class Platformn32Platform(PlatformBase):
         if upload == "daplink":
             self.packages["tool-pyocd"]["optional"] = False
 
+        custom_enable_dsp = board_config.get("build.add_cmsis_dsp", 'False')
+        if custom_enable_dsp != 'False':
+            self.packages["framework-cmsis-dsp"]["optional"] = False
+
         # TODO: also do same for jlink
 
         return super().configure_default_packages(

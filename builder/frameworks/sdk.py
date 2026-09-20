@@ -145,4 +145,20 @@ libs.append(
     )
 )
 
+# check for optional DSP library
+if board.get("build.add_cmsis_dsp", "False") != 'False':
+    dsp_src_dir = join(platform.get_package_dir("framework-cmsis-dsp"), "Source")
+    dsp_inc_dir = join(platform.get_package_dir("framework-cmsis-dsp"), "Include")
+    dsp_private_inc_dir = join(platform.get_package_dir("framework-cmsis-dsp"), "PrivateInclude")
+    env.Append(CPPPATH=[dsp_inc_dir, dsp_private_inc_dir])
+    libs.append(
+        env.BuildLibrary(
+            join("$BUILD_DIR", "FrameworkCMSISDSP"),
+            dsp_src_dir,
+            src_filter=[
+                '+<ControllerFunctions\ControllerFunctions.c>'
+            ],
+        )
+    )
+
 env.Prepend(LIBS=libs)
