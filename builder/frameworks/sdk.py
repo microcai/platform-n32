@@ -156,7 +156,7 @@ if board.get("build.add_cmsis_dsp", "False") != 'False':
             join("$BUILD_DIR", "FrameworkCMSISDSP"),
             dsp_src_dir,
             src_filter=[
-                '+<ControllerFunctions\ControllerFunctions.c>'
+                '+ControllerFunctions\\ControllerFunctions.c'
             ],
         )
     )

@@ -32,12 +32,12 @@
     },
     "framework-cmsis-dsp": {
       "type": "library",
-      "optional": true,
+      "optional": false,
       "version": "1.17.1"
     },
     "framework-N32sdk": {
       "type": "framework",
-      "optional": true,
+      "optional": false,
       "version": "https://github.com/microcai/framework-N32sdk"
     },
     "tool-pyocd": {
